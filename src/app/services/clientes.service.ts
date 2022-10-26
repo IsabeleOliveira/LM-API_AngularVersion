@@ -10,7 +10,7 @@ export class ClientesService {
   constructor(private http:HttpClient) { }
   getAll(){
     return this.http.get<any>(this.apiUrl)
-  }
+  } 
 
   save(cliente: object){
     console.log(cliente)
