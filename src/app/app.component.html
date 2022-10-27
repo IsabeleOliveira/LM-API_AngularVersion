@@ -4,29 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analisador de números</title>
+
+    <link rel="stylesheet" href="https://dds.dell.com/components/2.19.1/css/dds-fonts.min.css" />
+    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.19.0/css/dds-reboot.min.css" />
+    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.19.0/css/dds-fonts.min.css" />
+    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.19.0/css/dds-icons.min.css" />
+    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.19.0/css/dds-helpers.min.css" />
+    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.19.0/css/dds-main.min.css" />
+    <link rel="stylesheet" href="https://dds.dell.com/components/2.19.1/css/dds-reboot.min.css" />
+    
+
+
 </head>
 <body>
     <header>
-     <h1><strong>Cadastre Usuário</strong></h1>   
+     <h1>Cadastre Usuário</h1>   
     </header>
     <section>
-      <form>
-        <label for="nome">Nome: </label>
-        <input type="text" id="nome">
-        <button (click)="cadastrarClientes()">cadastrar</button>
+      <form data-dds="form" class="dds__form dds__container">
+       <div class="dds__input-text__container">
+          <label id="text-input-label-428675678" for="text-input-control-428675678">Nome do cliente</label>
+          <div class="dds__input-text__wrapper dds__input-text__wrapper--button">
+            <input
+              type="text"
+              class="dds__input-text"
+              name="text-input-control-428675678"
+              id="nomeinput"
+              required=""
+              aria-labelledby="text-input-label-428675678 text-input-helper-428675678"
+            />
+            <button class="dds__button" type="submit" (click)="cadastrarClientes()">Cadastrar</button>
+            <div id="text-input-error-428675678" class="dds__invalid-feedback">Error Message</div>
+          </div>
+        </div>
       </form>
-      <table>
+
+      <table id="" class="dds_table">
         <thead>
-          <tr>Clientes: </tr>
+          <tr class="dds__thead">
+            <th class="dds__th">ID</th>
+            <th class="dds__th">Nome</th>
+          </tr>
         </thead>
         <tbody *ngIf="clientes$">
-          <tr *ngFor="let item of clientes$"><td>ID: {{item.id}} - Nome: {{item.nome}}</td></tr>
+          <tr class="dds__tr" *ngFor="let item of clientes$">
+            <td class="dds__td">{{item.id}}</td>
+            <td class="dds__td">{{item.nome}}</td>
+          </tr>
         </tbody>
       </table>
     </section>
-    <footer>
-        <p> &copy; Isabele Oliveira</p>
-    </footer>
+    <footer>Isabele Oliveira</footer>
+    <script src="https://dds.dell.com/components/2.19.0/js/index.min.js"></script>
 </body>
 </html>
